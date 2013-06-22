@@ -1,15 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Description:</b>
-  <%= @need.description %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @need.user_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_need_path(@need) %> |
-<%= link_to 'Back', needs_path %>
+<div class="row">
+  <div class="span6">
+    <p>I need...</p>
+    <p class="lead"><%= @need.description %></p>
+  </div>
+  <div class="span6">
+    You can contact me via...
+  </div>
+</div>
