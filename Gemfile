@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'acts-as-taggable-on'
