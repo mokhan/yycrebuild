@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'devise'
-gem 'sqlite3'
 gem 'bootstrap-sass'
+
+group :development, :test do
+  gem 'sqlite3'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
