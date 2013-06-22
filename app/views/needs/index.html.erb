@@ -1,5 +1,14 @@
-<h1>Needs</h1>
+<%= form_for(Need.new) do |f| %>
+  <div class="field">
+    I need:
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
 
+<h1>Needs</h1>
 <table class="table">
   <tr>
     <th>Description</th>
@@ -14,6 +23,3 @@
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Need', new_need_path %>
