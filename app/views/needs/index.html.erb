@@ -1,18 +1,22 @@
 <div class="row">
   <div class="span12">
-    <%= form_for(Need.new, :class => "form-horizontal") do |f| %>
-      <div class="control-group">
-        <label class="control-label" for="inputEmail">I need</label>
-        <div class="controls">
-          <%= f.text_area :description, cols: 160, rows: 2, :class => "span12" %>
+    <% if user_signed_in? %>
+      <%= form_for(Need.new, :class => "form-horizontal") do |f| %>
+        <div class="control-group">
+          <label class="control-label" for="inputEmail">I need</label>
+          <div class="controls">
+            <%= f.text_area :description, cols: 160, rows: 2, :class => "span12" %>
+          </div>
         </div>
-      </div>
-      <div class="control-group">
-        <div class="controls">
-          <%= f.submit "Submit" %>
+        <div class="control-group">
+          <div class="controls">
+            <%= f.submit "Submit" %>
+          </div>
         </div>
-      </div>
-  <% end %>
+      <% end %>
+    <% else %>
+      <%= link_to "I need...", new_user_registration_path, :class => "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
 
