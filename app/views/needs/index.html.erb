@@ -1,25 +1,35 @@
-<%= form_for(Need.new) do |f| %>
-  <div class="field">
-    I need:
-    <%= f.text_area :description %>
+<div class="row">
+  <div class="span12">
+    <%= form_for(Need.new, :class => "form-horizontal") do |f| %>
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">I need</label>
+        <div class="controls">
+          <%= f.text_area :description, cols: 160, rows: 2, :class => "span12" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <%= f.submit "Submit" %>
+        </div>
+      </div>
+  <% end %>
   </div>
-  <div class="actions">
-    <%= f.submit "Submit" %>
+</div>
+
+<div class="row">
+  <div class="span12">
+    <h1>Needs</h1>
+    <table class="table">
+      <tr>
+        <th>Description</th>
+        <th>Person</th>
+      </tr>
+      <% @needs.each do |need| %>
+        <tr>
+        <td><%= need.description %></td>
+        <td><%= need.user.email %></td>
+      </tr>
+    <% end %>
+    </table>
   </div>
-<% end %>
-
-<h1>Needs</h1>
-<table class="table">
-  <tr>
-    <th>Description</th>
-    <th>Person</th>
-  </tr>
-
-<% @needs.each do |need| %>
-  <tr>
-    <td><%= need.description %></td>
-    <td><%= need.user.email %></td>
-  </tr>
-<% end %>
-</table>
-
+</div>
