@@ -3,7 +3,7 @@
     <% if user_signed_in? %>
       <%= form_for(Need.new, :class => "form-horizontal") do |f| %>
         <div class="control-group">
-          <label class="control-label" for="inputEmail">I need</label>
+          <label class="control-label" for="description">I need</label>
           <div class="controls">
             <%= f.text_area :description, cols: 160, rows: 2, :class => "span12" %>
           </div>
@@ -32,7 +32,7 @@
       <% @needs.each do |need| %>
         <tr>
         <td><%= gravatar_for(need.user) %></td>
-        <td><%= need.description %></td>
+        <td>I need <%= need.description %></td>
         <td><%= link_to "I can help...", need_path(need), :class => "btn" %></td>
       </tr>
     <% end %>
