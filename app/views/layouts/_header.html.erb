@@ -13,7 +13,7 @@
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= current_user.email %><b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li> <%= link_to "My Readings", readings_path %> </li>
+              <li> <%= link_to "I Need", needs_path %> </li>
               <li class="divider"></li>
               <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
             </ul>
