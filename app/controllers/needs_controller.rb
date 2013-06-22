@@ -14,6 +14,7 @@ class NeedsController < ApplicationController
 
   def create
     @need = current_user.needs.create(params[:need])
+    current_user.tag(@need, :with => params[:need_tags], :on => :tags)
     if @need.save
        redirect_to needs_path, notice: 'Need was successfully created.'
     else

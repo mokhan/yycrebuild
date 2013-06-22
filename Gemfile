@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.13'
+gem 'jquery-rails'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'acts-as-taggable-on'
@@ -15,8 +16,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'asset_sync'
 end
-
-gem 'jquery-rails'
 
 group :production do
   gem 'pg'

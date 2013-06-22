@@ -1,3 +1,10 @@
+<script type="text/javascript" charset="utf-8">
+$(function(){
+  var all_tags = [ <% ActsAsTaggableOn::Tag.pluck(:name).each { |item| %> '<%= item %>', <% } %> ];
+  $('#tags').tagit({ availableTags: all_tags }); 
+});
+</script>
+
 <div class="row">
   <div class="span12">
     <% if user_signed_in? %>
@@ -6,6 +13,12 @@
           <label class="control-label" for="description">I need</label>
           <div class="controls">
             <%= f.text_area :description, cols: 160, rows: 2, :class => "span12" %>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="description">tags</label>
+          <div class="controls">
+            <input name="need_tags" type="text" id="tags" value="" class="input-xxlarge" autocomplete="off" />
           </div>
         </div>
         <div class="control-group">
@@ -32,7 +45,14 @@
       <% @needs.each do |need| %>
         <tr>
         <td><%= gravatar_for(need.user) %></td>
-        <td>I need <%= need.description %></td>
+        <td>
+          I need <%= need.description %>
+        <br />
+        <span> <i class="icon-tags"></i> </span>
+        <% need.tags.each do |tag| -%>
+          <a href=""><span class="label"><%= tag.name %></span></a>
+        <% end -%>
+        </td>
         <td><%= link_to "I can help...", need_path(need), :class => "btn" %></td>
       </tr>
     <% end %>
