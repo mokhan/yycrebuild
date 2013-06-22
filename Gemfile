@@ -5,6 +5,7 @@ gem 'bootstrap-sass'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'dotenv-rails'
 end
 
 group :assets do
