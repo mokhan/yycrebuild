@@ -25,11 +25,13 @@
     <h1>Needs</h1>
     <table class="table">
       <tr>
+        <th>Person</th>
         <th>Description</th>
         <th></th>
       </tr>
       <% @needs.each do |need| %>
         <tr>
+        <td><%= gravatar_for(need.user) %></td>
         <td><%= need.description %></td>
         <td><%= link_to "I can help...", need_path(need), :class => "btn" %></td>
       </tr>
