@@ -11,11 +11,10 @@ $(function() {
   <div class="span5">
     <% if user_signed_in? %>
       <h1>I need...</h1>
-      <%= form_for(Need.new, :class => "form-horizontal") do |f| %>
+      <%= form_for Need.new, :html => {:class => "form-inline"} do |f| %>
         <div class="control-group">
-        <label class="control-label" for="description">I need</label>
         <div class="controls">
-          <%= f.text_area :description, cols: 160, rows: 2, :class => "span12" %>
+          <%= f.text_area :description, cols: 160, rows: 2, :class => "span5" %>
         </div>
       </div>
       <div class="control-group">
@@ -25,14 +24,14 @@ $(function() {
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="description">tags</label>
+        <label class="control-label" for="tags">Tags</label>
         <div class="controls">
           <input name="need_tags" type="text" id="tags" value="" class="input-xxlarge" autocomplete="off" placeholder="e.g. trucks, sunnyside" />
         </div>
       </div>
       <div class="control-group">
         <div class="controls">
-          <%= f.submit "Send" %>
+          <%= f.submit "Send", :class => "btn btn-primary" %>
         </div>
       </div>
     <% end %>
