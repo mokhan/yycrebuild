@@ -1,8 +1,7 @@
 <% content_for :javascript do %>
 <script type="text/javascript" charset="utf-8">
 $(function() {
-  var all_tags = [ <% ActsAsTaggableOn::Tag.pluck(:name).each { |item| %> '<%= item %>', <% } %> ];
-  $('#tags').tagit({ availableTags: all_tags }); 
+  $('#tags').tagit({ availableTags: [<% @tags.each { |x| %>'<%= x %>',<% } %>] });
 });
 </script>
 <% end %>

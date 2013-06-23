@@ -2,6 +2,7 @@ class NeedsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
   def index
     @needs = Need.all
+    @tags = ActsAsTaggableOn::Tag.pluck(:name)
   end
 
   def show
@@ -17,9 +18,9 @@ class NeedsController < ApplicationController
     location = GeoLocationService.GetGeoLocation(params[:location]) if params[:location]
     current_user.tag(@need, :with => params[:need_tags], :on => :tags)
     if @need.save
-       redirect_to needs_path, notice: 'Need was successfully created.'
+      redirect_to needs_path, notice: 'Need was successfully created.'
     else
-       render action: "new"
+      render action: "new"
     end
   end
 end
