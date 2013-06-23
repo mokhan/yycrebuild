@@ -24,6 +24,5 @@ end
 group :production do
   gem 'pg'
   gem 'unicorn'
-  gem 'coffee-rails', '~> 3.2.1'
   gem 'asset_sync'
 end
