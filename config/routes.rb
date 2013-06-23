@@ -8,4 +8,5 @@ Yycrebuild::Application.routes.draw do
 
   resources :needs
   resources :neighbourhoods
+  resources :tags, :only => [:show], :path => :t
 end
