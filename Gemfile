@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.13'
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
+gem "jquery-rails", "2.3.0"
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'acts-as-taggable-on'
 gem 'rest-client'
+gem 'activeadmin'
 
 group :development, :test do
   gem 'sqlite3'
