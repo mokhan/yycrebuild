@@ -31,9 +31,7 @@ class GeoLocationService
 end
 
 class GeoLocation
-
 	attr_accessor :x, :y
-	
 	def initialize (x,y)
 		@x = x
 		@y = y

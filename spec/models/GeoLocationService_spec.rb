@@ -1,4 +1,4 @@
-require_relative '../GeoLocationService.rb'
+require 'spec_helper'
 
 describe GeoLocationService do
 	it "can get a location" do

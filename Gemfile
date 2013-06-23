@@ -5,10 +5,12 @@ gem 'jquery-ui-rails'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'acts-as-taggable-on'
+gem 'rest-client'
 
 group :development, :test do
   gem 'sqlite3'
   gem 'dotenv-rails'
+  gem 'rspec-rails'
 end
 
 group :assets do
