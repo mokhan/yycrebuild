@@ -9,7 +9,7 @@
         </tr>
       </thead>
       <tbody>
-      <% @neighbourhoods.each do |neighbourhood| %>
+      <% @neighbourhoods.sort { |a,b| a.name <=> b.name }.each do |neighbourhood| %>
       <tr>
         <td><%= neighbourhood.name %></td>
         <td class="<%= css_class_for(neighbourhood) %>"><%= neighbourhood.status %></td>
