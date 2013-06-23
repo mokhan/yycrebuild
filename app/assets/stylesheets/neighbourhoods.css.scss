@@ -10,7 +10,7 @@ $white: #fff;
 body { text-rendering:optimizeLegibility; }
 
 .neighbourhoods {
-  td { color:$white; }
+  td.evac, td.open, td.part { color:$white; }
   td.evac { background:$red; text-transform:uppercase; }
   td.open { background:$green; }
   td.part { background:$orange; }
