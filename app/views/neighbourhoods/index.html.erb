@@ -12,13 +12,7 @@
       <% @neighbourhoods.each do |neighbourhood| %>
       <tr>
         <td><%= neighbourhood.name %></td>
-        <% case when neighbourhood.status.start_with?('Evac') %>
-            <td class="evac"><%= neighbourhood.status %></td>
-        <% when neighbourhood.status.start_with?('Part') %>
-            <td class="part"><%= neighbourhood.status %></td>
-        <% else  %>
-          <td class="open"><%= neighbourhood.status %></td>
-        <% end %>
+        <td class="<%= css_class_for(neighbourhood) %>"><%= neighbourhood.status %></td>
       </tr>
       <% end %>
       </tbody>
