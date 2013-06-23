@@ -59,7 +59,7 @@ $(function() {
         <td> I need <%= need.description %></td>
         <td><span> <i class="icon-tags"></i> </span>
         <% need.tags.each do |tag| -%>
-          <a href=""><span class="label"><%= tag.name %></span></a>
+          <a href="<%= url_for tag_path(tag.name) %>"><span class="label"><%= tag.name %></span></a>
         <% end -%>
         </td>
         <td><%= link_to "Help", need_path(need), :class => "btn" %></td>
