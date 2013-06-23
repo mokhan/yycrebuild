@@ -1,3 +1,15 @@
 // Place all the styles related to the Neighbourhoods controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$green: #00cc33;
+$orange: #cc9900;
+$red: #cc0000;;
+$white: #fff;
+
+body { text-rendering:optimizeLegibility; }
+
+td { color:$white; text-decoration:uppercase;}
+td.evac { background:$red; }
+td.open { background:$green; }
+td.part { background:$orange; }
