@@ -6,6 +6,7 @@ gem 'bootstrap-sass'
 gem 'acts-as-taggable-on'
 gem 'rest-client'
 gem 'activeadmin'
+gem 'geocoder'
 
 group :development, :test do
   gem 'sqlite3'
