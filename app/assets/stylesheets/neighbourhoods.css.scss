@@ -9,7 +9,9 @@ $white: #fff;
 
 body { text-rendering:optimizeLegibility; }
 
-td { color:$white; text-decoration:uppercase;}
-td.evac { background:$red; }
-td.open { background:$green; }
-td.part { background:$orange; }
+.neighbourhoods {
+  td { color:$white; }
+  td.evac { background:$red; text-transform:uppercase; }
+  td.open { background:$green; }
+  td.part { background:$orange; }
+}
