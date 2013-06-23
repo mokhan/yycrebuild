@@ -4,7 +4,7 @@
     <p class="lead"><%= @need.description %></p>
   </div>
   <div class="span6">
-    <p>You can contact me <a href="mailto:<%= @need.user.email %>"><%= @need.user.email %></a></p>
+    <p>You can contact me by <%= mail_to @need.user.email, "email", :encode => "javascript" %>.</p>
     <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@need.latitude}%2C#{@need.longitude}" %>
   </div>
 </div>
@@ -12,7 +12,7 @@
 <div class="row">
   <div class="span12">
     <ul>
-      <% for need in @need.nearbys(10) %>
+      <% for need in @need.nearbys(10) || [] %>
         <li><%= link_to need.address, need %> (<%= need.distance.round(2) %> miles)</li>
       <% end %>
     </ul>
