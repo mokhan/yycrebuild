@@ -37,25 +37,25 @@ $(function() {
 
 <div class="row">
   <div class="span12">
-    <h1>Needs</h1>
     <table class="table">
       <tr>
-        <th>Person</th>
-        <th>Description</th>
+        <th></th>
+        <th></th>
+        <th>Need</th>
+        <th>Tags</th>
         <th></th>
       </tr>
       <% @needs.each do |need| %>
-        <tr>
-        <td><%= gravatar_for(need.user) %></td>
-        <td>
-          I need <%= need.description %>
-        <br />
-        <span> <i class="icon-tags"></i> </span>
+      <tr>
+        <td><%= gravatar_for(need.user) %></td> 
+        <td><%= need.user.name %></td>
+        <td> I need <%= need.description %></td>
+        <td><span> <i class="icon-tags"></i> </span>
         <% need.tags.each do |tag| -%>
           <a href=""><span class="label"><%= tag.name %></span></a>
         <% end -%>
         </td>
-        <td><%= link_to "I can help...", need_path(need), :class => "btn" %></td>
+        <td><%= link_to "Help", need_path(need), :class => "btn" %></td>
       </tr>
     <% end %>
     </table>
