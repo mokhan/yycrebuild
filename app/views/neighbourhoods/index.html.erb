@@ -12,13 +12,12 @@
       <% @neighbourhoods.each do |neighbourhood| %>
       <tr>
         <td><%= neighbourhood.name %></td>
-        <% case
-        when neighbourhood.status.starts_with.downcase? == 'evac' %>
-            <td class="evac"><%= neighbourhood.status %></td>  
-        <% when neighbourhood.status.starts_with.downcase? == 'part' %>
-            <td class="part">neighbourhood.status</td>  
+        <% case when neighbourhood.status.start_with?('Evac') %>
+            <td class="evac"><%= neighbourhood.status %></td>
+        <% when neighbourhood.status.start_with?('Part') %>
+            <td class="part"><%= neighbourhood.status %></td>
         <% else  %>
-            <td class="open">neighbourhood.status</td>  
+          <td class="open"><%= neighbourhood.status %></td>
         <% end %>
         </td>
       </tr>
