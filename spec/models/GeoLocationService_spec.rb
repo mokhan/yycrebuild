@@ -39,4 +39,16 @@ describe GeoLocationService do
 		result.x.should be_within(0.0001).of(-87.6221405679)
 		result.y.should be_within(0.0001).of(41.8845104628)
 	end
+
+        it "can look up by postal code" do 
+		result = GeoLocationService.GetGeoLocation("T2J0A3")
+		result.should be_an_instance_of(GeoLocation)
+		result.x.should be_within(0.0001).of(-114.06582942278891)
+		result.y.should be_within(0.0001).of(50.97218089773139)
+        end        
+
+        it "will return nil with an invalid postal code" do
+		result = GeoLocationService.GetGeoLocation("T2J0A")
+		result.should be_nil 
+        end
 end

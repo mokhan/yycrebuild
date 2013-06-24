@@ -23,6 +23,8 @@ class GeoLocationService
 	def self.ExtractGeoLocationFromJson( jsonString)
 		parsed = JSON.parse(jsonString)
 		
+                return nil if parsed["locations"].length == 0
+                
 		# need to handle more than one match
 		x = parsed["locations"][0]["feature"]["geometry"]["x"]
 		y = parsed["locations"][0]["feature"]["geometry"]["y"]
