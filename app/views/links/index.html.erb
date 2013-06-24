@@ -28,13 +28,15 @@ $('form').on('submit', function(){
       <tr>
         <th></th>
         <th></th>
-        <th>Need</th>
-        <th>Tags</th>
+        <th></th>
         <th></th>
       </tr>
       <% @links.each do |link| %>
         <tr>
         <td><%= link.url %></td>
+        <td><%= link.description %></td>
+        <td><%= link.title %></td>
+        <td><%= image_tag link.thumbnail_url %></td>
       </tr>
     <% end %>
     </table>
