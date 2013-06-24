@@ -5,8 +5,9 @@ Yycrebuild::Application.routes.draw do
 
   devise_for :users
 
-  resources :needs
-  resources :neighbourhoods
+  resources :needs, :only => [:index, :show, :create]
+  resources :neighbourhoods, :only => [:index]
   resources :resources
+  resources :links, :only => [:index, :create], :path => :l
   resources :tags, :only => [:show], :path => :t
 end

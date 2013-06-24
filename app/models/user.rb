@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :postal_code, :latitude, :longitude
   has_many :needs
+  has_many :links
   acts_as_tagger
 
 private

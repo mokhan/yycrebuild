@@ -9,10 +9,6 @@ class NeedsController < ApplicationController
     @need = Need.find(params[:id])
   end
 
-  def new
-    @need = Need.new
-  end
-
   def create
     @need = current_user.needs.create(params[:need])
     current_user.tag(@need, :with => params[:need_tags], :on => :tags)
